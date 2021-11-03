@@ -64,30 +64,30 @@
     },
     {
         "_id": 9,
-        "x": 80,
+        "x": 70,
         "y": 18,
         "group_id": 0,
-        "rotate": 80
+        "rotate": -10
     },
     {
         "_id": 10,
-        "x": 80,
+        "x": 84,
         "y": 38,
         "group_id": 4,
-        "rotate": 80
+        "rotate": -10
     },
     {
         "_id": 11,
-        "x": 82,
+        "x": 86,
         "y": 48,
         "group_id": 4,
-        "rotate": 80
+        "rotate": -10
     },
     {
         "_id": 12,
-        "x": 84,
+        "x": 88,
         "y": 58,
         "group_id": 3,
-        "rotate": 80
+        "rotate": -10
     }
 ]

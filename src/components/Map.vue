@@ -3,7 +3,11 @@
     <h3>Карта офиса</h3>
 
     <div v-if="!isLoading" class="map-root">
-      <MapSVG ref="svg" v-click-outside="clickOutsideTable" />
+      <MapSVG
+        ref="svg"
+        v-click-outside="clickOutsideTable"
+        @click.stop="mapClickHandler"
+      />
 
       <TableSVG v-show="false" ref="table" />
     </div>
@@ -39,6 +43,7 @@ export default {
     };
   },
   mounted() {
+    this.toggleLoading();
     this.svg = d3.select(this.$refs.svg);
     this.g = this.svg.select("g");
     this.tableSVG = d3.select(this.$refs.table);
@@ -47,6 +52,7 @@ export default {
 
     if (this.g) {
       this.drawTables();
+      this.toggleLoading();
     } else {
       console.log("No group");
     }
@@ -83,6 +89,13 @@ export default {
     },
     clickOutsideTable() {
       this.handleClickOutside();
+    },
+    mapClickHandler(event) {
+      if (!event.target.classList.contains("wrapper-table"))
+        this.handleClickOutside();
+    },
+    toggleLoading() {
+      this.isLoading = !this.isLoading;
     },
   },
   directives: {

@@ -35,12 +35,7 @@ export default {
   },
   methods: {
     handleTableClick(tableId) {
-      for (let person of people) {
-        if (person.tableId == tableId) {
-          this.clickedPerson = person;
-          break;
-        }
-      }
+      this.clickedPerson = people.find((person) => person.tableId == tableId);
     },
     removeClickedPerson() {
       this.clickedPerson = null;
